@@ -1,22 +1,22 @@
 # String Calculator TDD Kata
 
-This project implements a simple string calculator in Python using Test-Driven Development (TDD) principles. The calculator takes a string of numbers and returns their sum, supporting various delimiters, including custom ones, and handling edge cases such as empty strings and negative numbers.
+This project implements a simple string calculator in Python using Test-Driven Development (TDD) principles. The
+calculator takes a string of numbers and returns their sum, supporting various delimiters, including custom ones, and
+handling edge cases such as empty strings and negative numbers.
 
 ## Table of Contents
 
 - [Getting Started](#getting-started)
 - [Usage](#usage)
-- [Implementation Details](#implementation-details)
 - [Tests](#tests)
 - [Streamlit App](#streamlit-app)
-- [Contributing](#contributing)
 - [License](#license)
 
 ## Getting Started
 
-### Prerequisites
+### Prerequisites Used
 
-- Python 3.x
+- Python 3.9
 - `pytest` for running tests
 - `streamlit` for the web app
 
@@ -57,3 +57,12 @@ from string_calculator import StringCalculator
 calculator = StringCalculator()
 result = calculator.add("1,2,3")
 print(result)  # Output: 6
+```
+
+## Streamlit-app
+
+Run the streamlit App:
+
+ ```bash
+ streamlit run app.py
+ ```

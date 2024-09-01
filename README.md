@@ -10,7 +10,6 @@ handling edge cases such as empty strings and negative numbers.
 - [Usage](#usage)
 - [Tests](#tests)
 - [Streamlit App](#streamlit-app)
-- [License](#license)
 
 ## Getting Started
 
@@ -58,6 +57,13 @@ calculator = StringCalculator()
 result = calculator.add("1,2,3")
 print(result)  # Output: 6
 ```
+## Tests
+Run the tests with PyTest
+
+ ```bash
+ python test_string_calculator.py
+ ```
+
 
 ## Streamlit-app
 

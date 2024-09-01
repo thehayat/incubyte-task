@@ -1,11 +1,26 @@
+import logging
+
+
 class StringCalculator:
 
     def __init__(self, delimiter: str = ","):
         self.default_delimiter = delimiter
 
+        # Simplified logging setup
+        logging.basicConfig(
+            filename='string_calc.log',
+            level=logging.INFO,
+            format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+        )
+        self.logger = logging.getLogger()
+
     def add(self, numbers: str) -> int:
+        self.logger.info(f"Input: {numbers}")
+
         if not numbers:
-            return 0
+            result = 0
+            self.logger.info(f"Output: {result}")
+            return result
 
         # Check for custom delimiter
         if numbers.startswith("//"):
@@ -25,12 +40,14 @@ class StringCalculator:
         if negatives:
             raise ValueError(f"negative numbers not allowed: {','.join(map(str, negatives))}")
 
-        return sum(num_list)
+        result = sum(num_list)
+        self.logger.info(f"Output: {result}")
+        return result
+
 
 if __name__ == "__main__":
     calc = StringCalculator()
-    # print(calc.add(""))  # Output: 0
     print(calc.add("1000,1001,2"))  # Output: 2003
     print(calc.add("1\n2,3,4"))  # Output: 10
     print(calc.add("//;\n1;2;3;4"))  # Output: 10
-    print(calc.add("1,2,-3,4,-5"))  # Raises ValueError: negative numbers not allowed: -3
+    print(calc.add("1,2,-3,4,-5"))

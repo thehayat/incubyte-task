@@ -10,6 +10,11 @@ st.title("String Calculator")
 # Input field for the numbers string
 numbers_input = st.text_input("Enter numbers (e.g., '1,2,3'):")
 
+st.success("""
+To change the delimiter, the beginning of the string will contain a separate line that looks like this: 
+"//[delimiter]\n[numbers…]". For example, "//;\n1;2" where the delimiter is ";" should return 3.
+""")
+
 # Perform the calculation when the button is pressed
 if st.button("Calculate"):
     try:

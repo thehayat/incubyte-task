@@ -29,8 +29,8 @@ class StringCalculator:
 
 if __name__ == "__main__":
     calc = StringCalculator()
-    print(calc.add(""))  # Output: 1298
-    print(calc.add("1234,64"))  # Output: 1298
+    # print(calc.add(""))  # Output: 0
+    print(calc.add("1000,1001,2"))  # Output: 2003
     print(calc.add("1\n2,3,4"))  # Output: 10
     print(calc.add("//;\n1;2;3;4"))  # Output: 10
     print(calc.add("1,2,-3,4,-5"))  # Raises ValueError: negative numbers not allowed: -3

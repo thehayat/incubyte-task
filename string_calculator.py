@@ -17,11 +17,32 @@ class StringCalculator:
 
     @staticmethod
     def get_numbers(nums):
+        """
+    This function extracts all the numbers (including negative ones) from a given string.
 
+    Parameters:
+    nums (str): The input string containing numbers separated by various delimiters.
+
+    Returns:
+    List[str]: A list of all the numbers found in the input string.
+    """
         matches = re.findall(r'-?\d+', nums)
         return matches
 
     def add(self, numbers: str) -> int:
+
+        """
+            This function adds all the numbers (including negative ones) from a given string.
+
+            Parameters:
+            numbers (str): The input string containing numbers separated by various delimiters.
+
+            Returns:
+            int: The sum of all the numbers found in the input string.
+
+            Raises:
+            ValueError: If there are any negative numbers in the input string.
+            """
         self.logger.info(f"Input: {numbers}")
 
         if not numbers:

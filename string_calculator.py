@@ -1,4 +1,5 @@
 import logging
+import re
 
 
 class StringCalculator:
@@ -14,6 +15,12 @@ class StringCalculator:
         )
         self.logger = logging.getLogger()
 
+    @staticmethod
+    def get_numbers(nums):
+
+        matches = re.findall(r'-?\d+', nums)
+        return matches
+
     def add(self, numbers: str) -> int:
         self.logger.info(f"Input: {numbers}")
 
@@ -22,27 +29,18 @@ class StringCalculator:
             self.logger.info(f"Output: {result}")
             return result
 
-        # Check for custom delimiter
-        if numbers.startswith("//"):
-            self.default_delimiter, numbers = numbers[2:].split("\n", 1)
-        else:
-            self.default_delimiter = ","
+        matches = StringCalculator.get_numbers(numbers)
+        negatives = []
+        total = 0
+        for element in matches:
+            if int(element) < 0:
+                negatives.append(element)
+            if int(element) <= 1000:
+                total += int(element)
 
-        # Replace newlines with the delimiter and split the string
-        numbers = numbers.replace("\n", self.default_delimiter)
-        num_list = [int(num) for num in numbers.split(self.default_delimiter) if num]
-
-        # Filter out numbers greater than 1000
-        num_list = [num for num in num_list]
-
-        # Check for negative numbers
-        negatives = [num for num in num_list if num < 0]
         if negatives:
             raise ValueError(f"negative numbers not allowed: {','.join(map(str, negatives))}")
-
-        result = sum(num_list)
-        self.logger.info(f"Output: {result}")
-        return result
+        return total
 
 
 if __name__ == "__main__":

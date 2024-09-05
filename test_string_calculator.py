@@ -51,9 +51,9 @@ def test_add_with_custom_delimiter_and_negative_numbers():
 
 
 def test_add_with_large_numbers():
-    assert calculator.add("1000,1001,2") == 2003
+    assert calculator.add("1000,1001,2") == 1002
 
 
 def test_add_with_custom_delimiter_and_large_numbers():
-    assert calculator.add("//;\n1000;1001;2") == 2003
+    assert calculator.add("//;\n1000;1001;2") == 1002
 

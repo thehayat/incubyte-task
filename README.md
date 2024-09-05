@@ -10,6 +10,7 @@ handling edge cases such as empty strings and negative numbers.
 - [Usage](#usage)
 - [Tests](#tests)
 - [Streamlit App](#streamlit-app)
+- [Further Enhancements](#Enhancements-Scope)
 
 ## Getting Started
 
@@ -57,13 +58,14 @@ calculator = StringCalculator()
 result = calculator.add("1,2,3")
 print(result)  # Output: 6
 ```
+
 ## Tests
+
 Run the tests with PyTest
 
  ```bash
  python test_string_calculator.py
  ```
-
 
 ## Streamlit-app
 
@@ -72,3 +74,13 @@ Run the streamlit App:
  ```bash
  streamlit run app.py
  ```
+
+## Enhancements-Scope
+
+List of the enhancements that can be considered
+
+1. Can be host as an api.
+2. Can add a Validation class or framework like Pydantic
+3. Can add caching for unrequited computation
+4. Can add configuration yaml for the logs.
+5. Code improvements based on Solid principles and Design Patterns 
